@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmls:th="http://www.thymeleaf.org" xmlns:xmls="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 출력 확인</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>image</th>
+    <td><img th:src="@{|/upload/${product.storedFileName}|}" alt=""></td>
+  </tr>
+</table>
+
+</body>
+</html>
