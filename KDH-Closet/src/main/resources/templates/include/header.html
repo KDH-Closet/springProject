@@ -1,40 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
 <style>
-    div {
-        background-color: #ff6a14;
+    .outer-container {
         width: 100%;
-        display: flex;
+        height: 10vh;
+        margin: 0;
     }
 
-    a {
+    .inner-container {
+        width: 100%;
+        height: 100%;
+        background-color: #fd6a14;
+        position: relative;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        float: left;
         margin-right: 300px;
-        margin-left: 20px;
+        width: 30px;
+        height: 30px;
+
+        color: black;
+        font-size: 1.0em;
     }
 
-    img{
-        width: 30px;
+    a:link, a:visited {
+        color: black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    .mypage {
+        background-image: url("../images/mypage-icon.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        float: right;
+
+        height: 5vh;
+        width: 5vh;
     }
 
 </style>
-<body>
-<header>
-    <div>
-        <div class="topNav">
-            <a href="/shop/top">Top</a>
-            <a href="/shop/Pants">Pants</a>
-            <a href="/shop/Outer">Outer</a>
-            <a href="/shop/Accessory">Accessory</a>
-        </div>
-        <div>
-            <p><img src="/images/person.png" alt=""/></p>
-            <button>로그인</button>
+
+<div class="outer-container">
+    <div class="inner-container">
+        <ul class="category">
+            <li>
+                <a href="/shop/top">Top</a>
+            </li>
+            <li>
+                <a href="/shop/Pants">Pants</a>
+            </li>
+
+            <li>
+                <a href="/shop/Outer">Outer</a>
+            </li>
+
+            <li>
+                <a href="/shop/Accessory">Accessory</a>
+            </li>
+        </ul>
+        <div class="mypage" onclick="location.href='/mypage'">
         </div>
     </div>
-</header>
-</body>
-</html>
+</div>
