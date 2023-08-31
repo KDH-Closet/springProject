@@ -1,10 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/orderlist.css"/>
+    <script>
+        $(function () {
+            $("#site-header").load("../include/header.html")
+            $("#site-footer").load("../include/footer.html")
+        });
+    </script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
+<div id="body-wrapper">
+    <header id="site-header" class="sticky-top"></header>
+    <div id="body-content">
+        <div class="grid text-center" id="my-page-header">
+            <div class="g-col-4">
+                <p>회원 이름</p>
+                <h2>김동현</h2>
+            </div>
+            <div class="g-col-4">
+                <p>회원 등급</p>
+                <h2>BASIC</h2>
+            </div>
+            <div class="g-col-4">
+                <p>보유 포인트</p>
+                <h2>0P</h2>
+            </div>
+        </div>
+        <div class="position-relative">
+            <div class="position-absolute top-0 start-0">
+                <h3>나의 주문</h3>
+                <br/>
+                <p>전체 주문 내역</p>
+                <p>결제 취소 내역</p>
+                <p>교환 반품 내역</p>
+                <br/>
+                <br/>
+                <h3>나의 정보</h3>
+                <p>내 정보 수정</p>
+                <p>포인트 & 쿠폰</p>
+                <p>라플 (응모 내역)</p>
+                <br/>
+                <br/>
+                <p>고객센터</p>
+                <p>자주 묻는 질문</p>
+                <p>로그아웃</p>
+            </div>
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <div id="title">
+                    <p>내 정보 수정</p>
+                </div>
+                <br/>
+                <div id="member-about">
+                    <p>나의 정보</p>
+                    <div class="row g-3" id="member-about-inner">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">이름</label>
+                            <!--value값에 유저 이름 대입-->
+                            <input type="text" class="form-control" id="name" value="김동현">
+                        </div>
 
+                        <div class="col-md-6">
+                            <label for="gender" class="form-label">성별</label>
+                            <select id="gender" class="form-select">
+                                <!--여기에 유저 성별 대입-->
+                                <option disabled selected style="display: none">남성</option>
+                                <option>남성</option>
+                                <option>여성</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="member-code" class="form-label">회원 코드</label>
+                            <!--value값에 유저 member_idx 대입-->
+                            <input type="text" class="form-control" id="member-code" readonly value="42">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="member-rank" class="form-label">회원 등급</label>
+                            <!--value값에 유저 member_rank 대입
+                                현재는 기능 미구현인 상태이므로 정적 요소로 둘것.-->
+                            <input type="text" class="form-control" id="member-rank" readonly value="BASIC">
+                        </div>
+                        <div class="row g-3" id="tel">
+                            <div class="col-auto">
+                                <label for="tel1" class="form-label">휴대폰 번호</label>
+                                <input type="text" class="form-control" id="tel1" placeholder="010">
+                            </div>
+                            <div class="col-auto">
+                                <label for="tel2" class="form-label">ㅤ</label>
+                                <input type="text" class="form-control" id="tel2" placeholder="1234">
+                            </div>
+                            <div class="col-auto">
+                                <label for="tel3" class="form-label">ㅤ</label>
+                                <input type="text" class="form-control" id="tel3" placeholder="5678">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="member-addr">
+                    <br/>
+                    <div class="col">
+                        <label for="addr1" class="form-label">주소</label>
+                        <!--value에 유저 주소 대입-->
+                        <input id="addr1" type="text" class="form-control" value="서울시 구로구 가산동">
+                    </div>
+                    <br/>
+                    <div class="col">
+                        <label for="zip-code" class="form-label">우편 번호</label>
+                        <!--value에 유저 우편 번호 대입-->
+                        <input id="zip-code" type="text" class="form-control" value="199402">
+                    </div>
+                    <br/>
+                    <div class="col-12">
+                        <!--value에 우저 상세 주소 대입-->
+                        <label for="addr2" class="form-label">상세 주소</label>
+                        <input type="text" class="form-control" id="addr2" value="마리오아울렛 2관 11층 5강의실">
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="col-12">
+                    <button type="button" class="btn btn-dark" id="join-btn"><p style="text-align: center">수정하기</p></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="site-footer"></footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
 </html>

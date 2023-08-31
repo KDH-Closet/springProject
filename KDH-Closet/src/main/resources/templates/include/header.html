@@ -1,15 +1,19 @@
 <style>
-    .outer-container {
-        width: 100%;
-        height: 10vh;
+    body, html {
         margin: 0;
+        padding: 0;
+    }
+
+    .outer-container {
+        background-color: white;
+        width: 100vw;
+        height: 120px;
     }
 
     .inner-container {
         width: 100%;
         height: 100%;
         background-color: #fd6a14;
-        position: relative;
     }
 
     ul {
@@ -26,12 +30,17 @@
         font-size: 1.0em;
     }
 
-    a:link, a:visited {
+    .category {
+        width: 80%;
+        padding-top: 20px;
+    }
+
+    .category > li > a:link, .category > li > a:visited {
         color: black;
         text-decoration: none;
     }
 
-    a:hover {
+    .category > li > a:hover {
         color: white;
         text-decoration: none;
     }
@@ -43,8 +52,10 @@
 
         float: right;
 
-        height: 5vh;
-        width: 5vh;
+        height: 60px;
+        width: 60px;
+
+        margin: -20px 40px 0 0;
     }
 
 </style>

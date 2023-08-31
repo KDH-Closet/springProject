@@ -1,43 +1,134 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="kr">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/accessory.css"/>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script>
         $(function () {
             $("#site-header").load("../include/header.html")
             $("#site-footer").load("../include/footer.html")
-
         });
     </script>
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
         }
     </style>
 </head>
+<body>
 <div id="body-wrapper">
-    <header id="site-header"></header>
-    <div id="body-content">
-        <div class="search-box">
-            <input type="text">
-        </div>
-        <article>
-            <div>
-                <a href="#">
-                    <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg">
-                </a>
+    <header id="site-header" class="sticky-top"></header>
+    <div class="body-content">
+        <div class="container-xxl">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="찾으시는 물건이 있으신가요?" aria-label="검색"
+                       aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-search"></i>
+                </button>
             </div>
-            <h2><a href="#">SunsetBeach</a></h2>
-            <a href="#">summer</a>
-            <a href="#">women</a>
-            <a href="#">yellow</a>
-        </article>
+        </div>
+        <div class="grid text-center">
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="data:image/jpeg;base64,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 "
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET< br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+
+            <div class="g-col-4">
+                <img src="https://media.worksout.co.kr/resized/live/DE23FWTSSS05144006/DE23FWTSSS05144006-0.jpg"
+                     width="300px" height="400px" loading="lazy" style="object-fit: cover">
+                <p style="text-align: left; line-height: normal;">신상품<br>KDH CLOSET<br>ESTABLISHED KDH CLOSET SHOR<br>43,000원</p>
+            </div>
+        </div>
     </div>
     <footer id="site-footer"></footer>
 </div>
-
-</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
 </html>

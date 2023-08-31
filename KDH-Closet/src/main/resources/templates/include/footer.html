@@ -1,7 +1,7 @@
 <style>
   .footer-outer-container {
     width: 100%;
-    height: 10vh;
+    height: 30vh;
     margin: 0;
   }
 
@@ -11,7 +11,60 @@
     background-color: #000000;
     position: relative;
   }
+
+  #footer-items {
+    color: #fd6a14 !important;
+  }
+
+
+  #copyright {
+    margin-top: 50px;
+  }
+
+  #footer-items > .col > a:link, .col>a:visited {
+    text-decoration: none;
+    color: #fd6a14;
+  }
+
+  #footer-items > .col > a:hover {
+    color: #e1e2e4;
+  }
+
+  #copyright {
+    color: #fd6a14;
+  }
 </style>
 <div class="footer-outer-container">
-  <div class="footer-inner-container"></div>
+  <div class="footer-inner-container">
+    <br/><br/>
+    <div class="container text-center">
+      <div id="footer-items" class="row align-items-start">
+        <div class="col">
+          <a href="#">Social</a><br/>
+          <a href="#">FaceBook</a><br/>
+          <a href="#">Twitter</a><br/>
+          <a href="#">Instagram</a><br/>
+        </div>
+        <div class="col">
+          <a href="#">Info</a><br/>
+          <a href="#">Shipping</a><br/>
+          <a href="#">Returns</a><br/>
+          <a href="#">Warranty</a>
+        </div>
+        <div class="col">
+          <a href="#">Support</a><br/>
+          <a href="#">FAQ</a><br/>
+          <a href="#">Contact</a><br/>
+          <a href="#">Chat</a>
+        </div>
+      </div>
+      <div class="container" id="copyright">
+        <i class="bi bi-twitter"></i>&nbsp&nbsp&nbsp
+        <i class="bi bi-instagram"></i>&nbsp&nbsp&nbsp
+        <i class="bi bi-facebook"></i>&nbsp&nbsp&nbsp
+        <i class="bi bi-twitch"></i>&nbsp&nbsp&nbsp
+        <p>ⓒ 2023 by KDH Closet All Pictures cannot be copied without permission.</p>
+      </div>
+    </div>
+  </div>
 </div>

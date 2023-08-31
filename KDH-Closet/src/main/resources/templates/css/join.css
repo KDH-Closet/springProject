@@ -1,0 +1,33 @@
+#body-content {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#join-form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn.btn-dark {
+    margin: 30px auto;
+    width: 100%;
+}
+
+#join-form > div > input, #join-form > div > select, #join-form > div > div > select, #tel > div > input{
+    height: 50px;
+    border-radius: 0;
+}
+
+#join-form > div {
+    margin: 20px 0;
+}
+
+#join-btn {
+    background-color: black;
+    border-radius: 0;
+    text-align: center;
+    height: 70px;
+}
+
+input::placeholder {
+    color: #e1e2e4;
+}
