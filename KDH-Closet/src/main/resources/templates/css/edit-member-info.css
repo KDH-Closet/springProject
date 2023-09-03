@@ -35,25 +35,29 @@
     height: 100%;
 }
 
-#title {
+#title, #member-about {
     padding-bottom: 20px;
-    border-bottom: 1px solid black;
-    text-align: left;
-    align-items: center;
+    border-bottom: 3px solid #b6b6b7;
 }
 
-.row {
-    margin-top: 20px;
-    align-items: center;
-    text-align: center;
+
+
+#member-about-inner {
+    width: 70%;
 }
 
-#tags {
-    background-color: #f3f4f6;
+input, select {
+    border-radius: 0 !important;
     height: 50px;
-    border-bottom: 2px solid #b6b6b7;
 }
 
-.order-list-items > div > img {
-    height: 150px;
+#edit-btn {
+    border-radius: 0;
+    height: 40px;
+    width: 400px;
+}
+
+input[readonly] {
+    background-color: #b6b6b7;
+    pointer-events: none;
 }

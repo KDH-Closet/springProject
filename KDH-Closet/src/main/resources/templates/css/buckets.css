@@ -24,20 +24,20 @@
 }
 
 .position-absolute.top-0.start-0 {
-    width: 250px;
-    height: 550px;
-    margin-left: 130px;
-}
-
-.position-absolute.top-50.start-50.translate-middle {
-    margin-left: 100px;
     width: 70%;
     height: 100%;
+    margin-left: 50px;
 }
+
+.position-absolute.top-0.end-0 {
+    margin-right: 100px;
+    width: 20%;
+    height: 50%;
+}
+
 
 #title {
     padding-bottom: 20px;
-    border-bottom: 1px solid black;
     text-align: left;
     align-items: center;
 }
@@ -54,6 +54,18 @@
     border-bottom: 2px solid #b6b6b7;
 }
 
-.order-list-items > div > img {
-    height: 150px;
+.card.mb-3 {
+    border: transparent;
+
+}
+
+#bucket-items-img {
+    height: 200px;
+}
+
+.btn.btn-dark {
+    margin-top: 80px;
+    height: 50px;
+    border-radius: 0 !important;
+    width: 100% ;
 }
