@@ -1,4 +1,4 @@
-package com.chunjae.kdhcloset.product.entity;
+package com.chunjae.kdhcloset.product.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -14,7 +14,7 @@ public class ProductImg {
     private String storedFileName;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_idx")
+    @JoinColumn(name = "productIdx")
      private Product product;
 
 

@@ -1,4 +1,6 @@
-package com.chunjae.kdhcloset.product.dto;
+package com.chunjae.kdhcloset.mypage.dto;
+
+import com.chunjae.kdhcloset.mypage.domain.Cart;
 
 import com.chunjae.kdhcloset.product.domain.Product;
 import com.chunjae.kdhcloset.product.domain.ProductImg;
@@ -9,28 +11,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class ProductDTO {
+public class CartDTO {
+    
+    private Long cartIdx;
+
+    private String cartSize;
+    private int cartCount;
     private Long productIdx;
-    private String category;
     private String name;
-    private String size;
     private int price;
-    private int count;
+    private Long memberIdx;
 
     private List<MultipartFile> productFile;
     private List<String> originalFileName; // 원본 파일 이름
     private List<String> storedFileName; // 서버 저장용 파알 이름
 
-
-    // Entity -> DTO로 변환
-    public static ProductDTO fromProduct(Product product){
-        ProductDTO productDTO = new ProductDTO();
-        productDTO.setProductIdx(product.getProductIdx());
-        productDTO.setCategory(product.getCategory());
-        productDTO.setName(product.getName());
-        productDTO.setSize(product.getSize());
-        productDTO.setPrice(product.getPrice());
-        productDTO.setCount(product.getCount());
+    public static CartDTO fromCart(Cart cart,Product product){
+        CartDTO cartDTO = new CartDTO();
+        cartDTO.setCartIdx(cart.getCartIdx());
+        cartDTO.setCartSize(cart.getCartSize());
+        cartDTO.setCartCount(cart.getCartCount());
+        cartDTO.setProductIdx(cart.getProduct().getProductIdx());
+        cartDTO.setName(cart.getProduct().getName());
+        cartDTO.setPrice(cart.getProduct().getPrice());
 
         List<String> originalFileNameList = new ArrayList<>();
         List<String> storedFileNameList = new ArrayList<>();
@@ -38,11 +41,9 @@ public class ProductDTO {
             originalFileNameList.add(productImg.getOriginalFileName());
             storedFileNameList.add(productImg.getStoredFileName());
         }
-        productDTO.setOriginalFileName(originalFileNameList);
-        productDTO.setStoredFileName(storedFileNameList);
+        cartDTO.setOriginalFileName(originalFileNameList);
+        cartDTO.setStoredFileName(storedFileNameList);
 
-
-        return productDTO;
+        return cartDTO;
     }
-
 }

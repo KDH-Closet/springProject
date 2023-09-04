@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/custom/buckets.css"/>
+    <script>
+        $(function () {
+            $("#site-header").load("../include/header.html")
+            $("#site-footer").load("../include/footer.html")
+        });
+    </script>
+    <script>
+        function selectAll(selectAll) {
+            const checkboxes
+                = document.querySelectorAll('input[type="checkbox"]');
+
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll.checked
+            })
+        }
+    </script>
+    <script>
+        function submitForm(imageInput) {
+            // 이미지를 클릭하면 해당 cartIdx 값을 가지고 폼을 제출
+            const cartIdx = imageInput.getAttribute("value");
+            const cartOrderForm = document.getElementById("cartOrderForm");
+
+            // 폼에 cartIdx 값을 설정
+            const hiddenInput = document.createElement("input");
+            hiddenInput.type = "hidden";
+            hiddenInput.name = "cartIdx";
+            hiddenInput.value = cartIdx;
+            cartOrderForm.appendChild(hiddenInput);
+
+            // 폼 제출
+            cartOrderForm.submit();
+        }
+    </script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        .position-absolute.bottom-0.end-0 {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="body-wrapper">
+    <header id="site-header" class="sticky-top"></header>
+    <div id="body-content">
+        <div class="grid text-center" id="my-page-header">
+            <div class="g-col-4">
+                <p>회원 이름</p>
+                <!--회원이름-->
+                <h2>김동현</h2>
+            </div>
+            <div class="g-col-4">
+                <p>회원 등급</p>
+                <h2>BASIC</h2>
+            </div>
+            <div class="g-col-4">
+                <p>보유 포인트</p>
+                <!--회원 보유 포인트-->
+                <h2>0P</h2>
+            </div>
+        </div>
+        <div class="position-relative">
+            <form action="/mypage/cartListDelete" method="post" id="cartListDeleteForm">
+                <div class="position-absolute top-0 start-0">
+                    <div class="container text-center" id="inner-body-content" style="width: 100vw">
+
+                        <div id="title"><p>장바구니</p></div>
+                        <div class="row" id="tags">
+                            <div class="col-1"><input type="checkbox" name="buckets-select" onclick="selectAll(this)">
+                            </div>
+                            <div class="col">상품 이미지</div>
+                            <div class="col-2">상품</div>
+                            <div class="col-2">사이즈</div>
+                            <div class="col-2">수량</div>
+                            <div class="col-2">가격</div>
+                            <div class="col-1">ㅤ</div>
+                        </div>
+                        <!--아이템 최대 3개까지만 넣어주세요. css가 깨져요.-->
+                        <!--순서대로 사진, 제품명, 상품번호, 수량, 금액 입력-->
+
+                        <div class="row order-list-items" th:each="cartItem : ${cartItems}">
+                            <!--<div class="col-1"><input type="checkbox" name="cartIdx"
+                                                      th:value="${cartItem.cartIdx}">
+                            </div>-->
+                            <div class="col">
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img th:src="@{'/upload/' + ${cartItem.storedFileName[0]}}"
+                                                 width="300px" height="400px" loading="lazy" style="object-fit: cover" ,
+                                                 th:width="100px" th:height="200px">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--상품번호-->
+                            <div class="col-2">
+                                <div class="card-body">
+                                    <!--제품명-->
+                                    <h5 class="card-title" th:text="${cartItem.name}"></h5>
+                                    <!--상품번호-->
+                                    <p class="card-text" th:text="'상품번호: ' + ${cartItem.productIdx}"></p>
+                                </div>
+                            </div>
+                            <!--사이즈-->
+                            <div class="col-2" th:text="${cartItem.cartSize}"></div>
+                            <!--수량-->
+                            <div class="col-2" th:text="${cartItem.cartCount}"></div>
+                            <!--가격-->
+                            <div class="col-2" th:text="${cartItem.price}"></div>
+                            <!--눌렀을 시 리스트에서 아이템 제거-->
+                            <div class="col-1">
+<!--                                <label><img src="/images/trash.png" alt="장바구니 삭제"/></label>-->
+                                <label for="delete">삭제</label>
+                                <input hidden="hidden" type="submit" th:value="${cartItem.cartIdx}" name="cartIdx" id="delete">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="position-absolute bottom-0 end-0">
+                <form action="/mypage/cart-order" method="post" id="cartOrderForm">
+                    <div th:each="cartItem : ${cartItems}">
+                        <input type="hidden" th:value="${cartItem.cartIdx}" name="cartIdx"/>
+                        <!--클릭 시 체크된 항목 구매-->
+                    </div>
+                    <input type="submit" class="btn btn-dark" value="장바구니 구매">
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer id="site-footer"></footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous">
+</script>
+
+</body>
+</html>

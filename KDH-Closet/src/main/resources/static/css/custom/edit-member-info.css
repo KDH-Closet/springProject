@@ -57,7 +57,19 @@ input, select {
     width: 400px;
 }
 
+#quit-btn {
+    margin-top: 10px;
+    border-radius: 0;
+    height: 40px;
+    width: 400px;
+}
+
 input[readonly] {
     background-color: #b6b6b7;
     pointer-events: none;
+}
+
+a, a:link, a:hover, a:after {
+    color: black;
+    text-decoration-line: none;
 }

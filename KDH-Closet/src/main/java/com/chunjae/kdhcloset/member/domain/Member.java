@@ -4,11 +4,13 @@ import com.chunjae.kdhcloset.util.BaseTime;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.sql.Date;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
 @Table(name = "tbl_member")
 public class Member extends BaseTime {
@@ -22,7 +24,7 @@ public class Member extends BaseTime {
     private String name;
 
     @Column(name = "gender", nullable = false)
-    private char gender;
+    private String gender;
 
     @Column(name = "id", nullable = false)
     private String id;
@@ -45,7 +47,7 @@ public class Member extends BaseTime {
     @Column(name = "point", nullable = false)
     private int point;
 
-    public Member(String name, char gender, String id, String password, Date birth, String tel, String addr, int zipCode) {
+    public Member(String name, String gender, String id, String password, Date birth, String tel, String addr, int zipCode) {
         this.name = name;
         this.gender = gender;
         this.id = id;
